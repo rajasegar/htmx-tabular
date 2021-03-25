@@ -10,3 +10,15 @@ mixin thsort(name,reverse,sortBy)
     else
       a(href="/?sortBy=" + name + "&direction=" + reverse) 
         block
+
+mixin star-rating(rating)
+  - var n = 0;
+  while n < rating
+    | &starf;
+    - n++
+
+mixin dollars(price)
+  - var n = 0;
+  while n < price
+    | $
+    - n++

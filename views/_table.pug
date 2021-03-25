@@ -1,0 +1,27 @@
+include mixins
+
+p #{totalResults} results found
+table.table.table-striped
+  thead
+    tr.table-dark
+      +thsort('name', reverse, sortBy) Name
+      +thsort('stars', reverse, sortBy) Stars
+      +thsort('price', reverse, sortBy) Price
+      +thsort('category', reverse, sortBy) Category
+  tbody
+    each r in restaurants
+      tr
+        td= r.name
+        td 
+          +star-rating(r.stars)
+        td
+          +dollars(r.price)
+        td= r.category
+
+if totalPages > 1
+  nav(aria-label='Page navigation example')
+    - var n = 0;
+    ul.pagination
+      while n < totalPages
+        li.page-item(class={active: start/10 === n })
+          a.page-link(href='/?start=' + (n * 10) + '&direction=' + direction) #{++n}

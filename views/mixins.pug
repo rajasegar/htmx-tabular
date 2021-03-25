@@ -1,0 +1,12 @@
+mixin thsort(name,reverse,sortBy)
+  th 
+    if sortBy === name
+      a(href="/?sortBy=" + name + "&direction=" + reverse) 
+        block
+        if reverse === 'desc'
+          |  &darr;
+        else
+          |  &uarr;
+    else
+      a(href="/?sortBy=" + name + "&direction=" + reverse) 
+        block

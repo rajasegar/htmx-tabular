@@ -6,6 +6,8 @@ With searching, sorting, and pagination
 
 [Demo](https://htmx-tabular.herokuapp.com)
 
+![htmx tabular demo gif](htmx-tabular-demo.gif)
+
 ## Usage
 Clone this repo, install dependencies and start the server.
 ```
